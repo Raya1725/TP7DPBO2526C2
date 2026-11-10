@@ -1,0 +1,138 @@
+/* Warna dipusatkan di variabel agar tema mudah diganti dari satu tempat. */
+:root {
+  --color-primary: #2563eb;
+  --color-danger: #dc2626;
+  --color-border: #d1d5db;
+  --color-header-bg: #f3f4f6;
+  --color-selected: #fef08a;
+}
+
+/* Body dibuat kolom setinggi layar agar footer terdorong ke dasar
+   halaman walau isi sedikit. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #111827;
+}
+
+header {
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* flex: 1 membuat main mengisi sisa tinggi, sehingga footer terdorong ke bawah. */
+main {
+  flex: 1;
+  padding: 0 16px 16px;
+}
+
+footer {
+  padding: 8px 16px;
+  background: var(--color-header-bg);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+nav {
+  margin-bottom: 16px;
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* border-collapse menggantikan border="1" bawaan HTML agar garis tabel tipis. */
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+th {
+  background: var(--color-header-bg);
+}
+
+input,
+select {
+  padding: 4px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Delete dibedakan warnanya karena aksinya merusak data. */
+button[name="delete"] {
+  background: var(--color-danger);
+}
+
+/* Tombol Batal di dialog dibuat netral agar tidak menyaingi tombol Simpan. */
+button[data-close-dialog] {
+  background: #6b7280;
+}
+
+dialog {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Tombol aksi disembunyikan dengan visibility (bukan display) agar
+   lebar tabel tidak bergeser saat tombol muncul. */
+.row-actions {
+  visibility: hidden;
+}
+
+/* Warna dipasang di td karena background td tabel menimpa background tr. */
+.selected-cell td {
+  background-color: var(--color-selected);
+}
+
+/* Tombol aksi hanya terlihat pada baris yang sedang terpilih. */
+.selected-cell .row-actions {
+  visibility: visible;
+}
+
+/* Form hapus berada di dalam sel tabel, jadi dibuat inline
+   agar sejajar dengan tombol Update. */
+.inline-form {
+  display: inline;
+}
