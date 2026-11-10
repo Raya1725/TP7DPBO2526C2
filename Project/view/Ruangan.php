@@ -103,7 +103,10 @@ $daftarGedung = $gedung->getAllGedung();
     <label>Ruangan:</label>
     <select name="id_ruangan">
         <?php foreach ($ruangan->getAllRuangan() as $b): ?>
-            <option value="<?= $b['id_ruangan'] ?>"><?= $b['nama_ruangan'] ?></option>
+            <?php // Ruangan yang sedang dipinjam tidak ditampilkan karena tidak bisa dipinjam lagi. ?>
+            <?php if ($b['status_ruangan'] != "Tidak Tersedia"): ?>
+                <option value="<?= $b['id_ruangan'] ?>"><?= $b['nama_ruangan'] ?></option>
+            <?php endif; ?>
         <?php endforeach; ?>
     </select>
     <label for="nama">Nama:</label>
