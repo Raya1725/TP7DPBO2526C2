@@ -192,3 +192,4 @@ Mengelola tabel relasi `petugas_dan_gedung`.
 
 Dokumentasi berupa screen record yang mencoba CRUD pada semua tabel (ruangan, petugas, gedung, dan relasi petugas dan gedung), termasuk peminjaman dan pengembalian ruangan. Video disimpan di folder `Dokumentasi` dengan nama file `Dokum Tp7.webm`.
 
+https://github.com/user-attachments/assets/e08c5b22-6e05-49b7-922f-6d01a9aa9fc9
